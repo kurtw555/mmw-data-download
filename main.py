@@ -239,14 +239,14 @@ def get_monitormw_data(
 
 if __name__ == "__main__":
     print("Hello, World!")
-    site_code = "R-RWH"
-    variable_code = "Meter_Hydros21_Depth"
+    
     now = pytz.utc.localize(datetime.utcnow()).astimezone(pytz.FixedOffset(-5 * 60))
     start_date = now - pd.Timedelta(value=30, unit="days")
+    
+    #Set variables
+    site_code = "R-RWH"
+    variable_code = "Meter_Hydros21_Depth"
     start_date = datetime(2024, 2, 1)
     end_date = datetime(2024, 3, 1)
-
-    cwd = os.getcwd()
-    print(cwd)
 
     get_data(site_code, variable_code, start_date, end_date)
