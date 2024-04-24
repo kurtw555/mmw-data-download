@@ -67,7 +67,7 @@ def get_data(site_code: str,
     #print(data_online)
     cwd = os.getcwd()
     print(cwd)
-    file_name = variable_code + "_" + start_date.strftime("%Y-%m-%d") +"_" + end_date.strftime("%Y-%m-%d")
+    file_name = variable_code + "_" + start_date.strftime("%Y-%m-%d") +"_" + end_date.strftime("%Y-%m-%d") + ".csv"
     data_online.to_csv(file_name)
 
 
@@ -245,8 +245,10 @@ if __name__ == "__main__":
     
     #Set variables
     site_code = "R-RWH"
-    variable_code = "Meter_Hydros21_Depth"
-    start_date = datetime(2024, 2, 1)
-    end_date = datetime(2024, 3, 1)
+    #variable_code = "Meter_Hydros21_Depth"
+    #variable_code = "Meter_Hydros21_Cond"
+    variable_code = "Meter_Hydros21_Temp"
+    start_date = datetime(2024, 3, 14)
+    end_date = datetime(2024, 4, 24)
 
     get_data(site_code, variable_code, start_date, end_date)
